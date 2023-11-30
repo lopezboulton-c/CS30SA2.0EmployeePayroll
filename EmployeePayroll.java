@@ -17,7 +17,9 @@ public class EmployeePayroll{
     final static String nl = System.lineSeparator();
 
     private static int nextID = 1000; // used to autogenerate unique id numbers
-
+    private static int MAXHOURS = 40; // max hours until overtime is used
+    private static double OVERTIME = 1.5; // rate is multiplied by extra hours
+    
     //*** Instance Variables ***
     private int id; // id number of a specific employee
     private int hours; // number of hours worked
@@ -104,6 +106,44 @@ public class EmployeePayroll{
     } // end of setWage
 
     // *** utility methods ***
-
+    // calculate regular pay
+    /*****************************************
+     * Description: Calculate the regular pay
+     *              given the hours and wage
+     * 
+     * Interface:
+     * 
+     * @return      regular pay value
+     * ****************************************/
+    public double regularPay(){
+        return hours * wage;
+    } // end of regularPay
+    
+    // calculate overtime pay
+    /*****************************************
+     * Description: Calculate the overtime pay
+     *              given the overtime hours
+     * 
+     * Interface:
+     * 
+     * @return      overtime pay value
+     * ****************************************/
+    public double overtimePay(){
+        return (hours - MAXHOURS) * OVERTIME;
+    } // end of overtimePay
+    
+    // calculate gross pay
+    /*****************************************
+     * Description: Calculate the gross pay
+     *              given the regular and
+     *              overtime pay
+     * 
+     * Interface:
+     * 
+     * @return      gross pay value
+     * ****************************************/
+     public double grossPay(){
+         return (regularPay() + overtimePay());
+     } // end of grossPay
     
 } // end of public class
