@@ -2,10 +2,10 @@
  * Programmer:    Celeste Lopez Boulton
  * Class:  CS30S
  *
- * Assignment: Circle Objecty Example
+ * Assignment: A2.0 Employee Payroll
  *
- * Description: Cirlce class to define the fields and behaviours
- *              of a Circle object
+ * Description: Employee Java class that calculates employee's
+ *              hourly wage.
  ***********************************************************************/
 
 // import libraries as needed here
@@ -20,9 +20,10 @@ public class EmployeePayroll{
     private static int nextID = 1000; // used to autogenerate unique id numbers
 
     //*** Instance Variables ***
-
     private double radius;
-    private int id;                 // id number of a specific employee
+    private int id; // id number of a specific employee
+    private int hours; // number of hours worked
+    private double wage; // employee's hourly wage
 
     //*** Constructors ***
     /* a constructor is the only way we
@@ -36,14 +37,18 @@ public class EmployeePayroll{
     public EmployeePayroll(){
         this.radius = 0.0;
         id = getNextID();
+        this.hours = hours;
+        this.wage = wage;
     }// end no-arg
 
     // initialized or parametered constructor
     // takes values as parameters and assigns
     // values to the fields of the object
-    public EmployeePayroll(double radius){
+    public EmployeePayroll(double radius, int hours, double wage){
         this.radius = radius;
         id = getNextID();
+        this.hours = hours;
+        this.wage = wage;
     }// end param constructor
     
     private int getNextID(){
