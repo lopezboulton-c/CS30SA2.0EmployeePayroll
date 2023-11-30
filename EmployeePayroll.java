@@ -12,13 +12,12 @@
 
 public class EmployeePayroll{
     //*** Class Variables ***
-
     // a new line character that works on every computer system
     final static String nl = System.lineSeparator();
-
+    final static int MAXHOURS = 40; // max hours until overtime is used
+    final static double OVERTIME = 1.5; // rate is multiplied by extra hours
+    
     private static int nextID = 1000; // used to autogenerate unique id numbers
-    private static int MAXHOURS = 40; // max hours until overtime is used
-    private static double OVERTIME = 1.5; // rate is multiplied by extra hours
     
     //*** Instance Variables ***
     private int id; // id number of a specific employee
