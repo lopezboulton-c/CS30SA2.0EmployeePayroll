@@ -6,7 +6,6 @@ import java.text.NumberFormat;
 /** ***************************************************
  *  Name:           Celeste Lopez Boulton
  *  Class:          CS30S
- * 
  *  Assignment:     Client Code Driver
  * 
  *  Description:    Prints the Employee Payroll information
@@ -32,22 +31,25 @@ public class ClientDriver {
 
         // ***** objects *****
         ProgramInfo pInfo = new ProgramInfo("A2.0: Employee Payroll");
-        
         //Scanner scanner = new Scanner(System.in);
+        NumberFormat currency = NumberFormat.getCurrencyInstance();
+        
         // ***** print banners *****
-
         System.out.println(pInfo.getBanner());
 
-        // ***** Using the Circle Class *****
+        // ***** Using the EmployeePayroll Class *****
         
         /* create/instantiate a couple of circle objects
          * note the difference between the no-arg and parameterd
          * instantiation
          */
-        
-        
+            EmployeePayroll employee1 = new EmployeePayroll(25, 15.25);
+            EmployeePayroll employee2 = new EmployeePayroll(60, 16.15);
+            EmployeePayroll employee3 = new EmployeePayroll();
+            EmployeePayroll employee4 = new EmployeePayroll();
 
         // ***** Print Formatted Output *****
+            System.out.println("*** Employee Payroll Record ***\n");
 
         // ***** Closing Message *****
 

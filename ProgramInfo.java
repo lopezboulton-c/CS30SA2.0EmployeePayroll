@@ -1,5 +1,5 @@
 /********************************************************************
- * Programmer:    sveinson
+ * Programmer:    Celeste Lopez Boulton
  * Class:  CS30S
  *
  * Assignment: Program Info Exericse
@@ -53,7 +53,7 @@ public class ProgramInfo {
         String bannerOut = "";
         
         bannerOut = "*******************************************\n";
-        bannerOut += "Name:        sveinson\n";
+        bannerOut += "Name:        Celeste Lopez Boulton\n";
         bannerOut += "Class:        CS30S\n";
         bannerOut += "Assignment:    " + assignmentName + "\n";
         bannerOut += "*******************************************\n\n"; 
@@ -72,7 +72,7 @@ public class ProgramInfo {
         String bannerOut = "";
         
         bannerOut = "*******************************************\n";
-        bannerOut += "Name:        sveinson\n";
+        bannerOut += "Name:        Celeste Lopez Boulton\n";
         bannerOut += "Class:        CS30S\n";
         bannerOut += "Assignment:    " + assignmentName + "\n";
         bannerOut += "*******************************************\n\n"; 
