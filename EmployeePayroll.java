@@ -142,7 +142,29 @@ public class EmployeePayroll{
      * @return      gross pay value
      * ****************************************/
      public double grossPay(){
-         return (regularPay() + overtimePay());
+        return (regularPay() + overtimePay());
      } // end of grossPay
     
+    // Overriding Methods
+    public boolean equals(EmployeePayroll x){
+        boolean equal;
+        
+        equal = this.grossPay() == x.grossPay();
+        
+        return equal;
+    } // end of equals
+    
+    @Override
+    public String toString(){
+        String str;
+        
+        str = "ID: " + this.id + nl;
+        str += "Hours: " + this.hours + nl;
+        str += "Wage: " + this.wage + nl;
+        str += "Regular Pay: " + String.format("%4.2f", this.regularPay()) + nl;
+        str += "Overtime Pay: " + String.format("%4.2f", this.overtimePay()) + nl;
+        str += "Gross Pay: " + String.format("%4.2f", this.grossPay()) + nl;
+        
+        return str;
+    } // end of toString
 } // end of public class
