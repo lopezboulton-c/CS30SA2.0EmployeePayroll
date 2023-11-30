@@ -15,12 +15,10 @@ public class EmployeePayroll{
 
     // a new line character that works on every computer system
     final static String nl = System.lineSeparator();
-    private final double PI = 3.14159;
-    
+
     private static int nextID = 1000; // used to autogenerate unique id numbers
 
     //*** Instance Variables ***
-    private double radius;
     private int id; // id number of a specific employee
     private int hours; // number of hours worked
     private double wage; // employee's hourly wage
@@ -35,7 +33,6 @@ public class EmployeePayroll{
     // sets the values of the fields to some
     // default value
     public EmployeePayroll(){
-        this.radius = 0.0;
         id = getNextID();
         this.hours = hours;
         this.wage = wage;
@@ -44,15 +41,14 @@ public class EmployeePayroll{
     // initialized or parametered constructor
     // takes values as parameters and assigns
     // values to the fields of the object
-    public EmployeePayroll(double radius, int hours, double wage){
-        this.radius = radius;
+    public EmployeePayroll(int hours, double wage){
         id = getNextID();
         this.hours = hours;
         this.wage = wage;
     }// end param constructor
     
     private int getNextID(){
-        return nextID++;            // return current id and increment for next use
+        return nextID++; // return current id and increment for next use
     }// end get next id
 
     /*****************************************
@@ -66,83 +62,48 @@ public class EmployeePayroll{
      * @return       any return value will be noted here
      * ****************************************/
 
-    //*** Getters ***
+    //*** Getters ***  
     /*****************************************
-     * Description: get the radius of the circle
+     * Description: get the unique ID for employee
      * 
      * Interface:
      * 
-     * @return       double: radius of the circle
+     * @return       return ID of employee
      * ****************************************/
-    public double getRadius(){
-        return this.radius;
-    }//end get radius
-    
+
     public int getID(){
         return this.id;
-    }// end get id
+    } // end get id
+    /*****************************************
+     * Description: get hours worked by employee
+     * 
+     * Interface:
+     * 
+     * @return      return hours worked by employee
+     * ****************************************/
+    public int getHours(){
+        return this.hours;  
+    } // end of getHours
+    /*****************************************
+     * Description: get wage for employee
+     * 
+     * Interface:
+     * 
+     * @return      return wage for employee
+     * ****************************************/
+    public double getWage(){
+        return this.wage;
+    } // end of getWage
 
     //*** Setters ***
-    public void setRadius(double r){
-        this.radius = r;
-    }// end set radius
+    public void setHours(int h){
+        this.hours = h;
+    } // end of setHours
+    public void setWage(double w){
+       this.wage = w; 
+    } // end of setWage
 
     // *** utility methods ***
 
-    // calculate diameter
-    /*****************************************
-     * Description: Calculate the diameter of the circel with radius r
-     * 
-     * Interface:
-     * 
-     * @return       diameter of the circle: double
-     * ****************************************/
-    public double getDiameter(){
-        return this.radius * 2;
-    }// end diameter
-
-    // calculate circumference
-    /*****************************************
-     * Description: Calculate the circumference of the circel with radius r
-     * 
-     * Interface:
-     * 
-     * @return       circumference of the circle: double
-     * ****************************************/
-    public double getCircumference(){
-        return this.radius * 2 * PI;
-    }// end circumference
-
-    // calculate area
-    /*****************************************
-     * Description: Calculate the area of the circel with radius r
-     * 
-     * Interface:
-     * 
-     * @return       area of the circle: double
-     * ****************************************/
-    public double getArea(){
-        return this.radius * this.radius * PI;
-    }// end area
-
-    // Overriding methods
-    public boolean equals(EmployeePayroll oc){
-        boolean equal;
-
-        equal = this.radius == oc.getRadius();
-
-        return equal;
-    }// end equals
-
-    @Override
-    public String toString(){
-        String st;
-        st = "Circle ID: " + getID() + nl;
-        st += "Radius: " + String.format("%8.3f",this.radius) + nl;
-        st += "Diameter: " + String.format("%8.3f",this.getDiameter()) + nl;
-        st += "Circumference: " + String.format("%8.3f",this.getCircumference()) + nl;
-        st += "Area: " + String.format("%8.3f",this.getArea()) + nl;
-
-        return st;
-    }// end toString
+    
 } // end of public class
