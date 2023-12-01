@@ -128,7 +128,16 @@ public class EmployeePayroll{
      * @return      overtime pay value
      * ****************************************/
     public double overtimePay(){
-        return (hours - MAXHOURS) * OVERTIME;
+        double overtime; 
+        
+        if(hours > MAXHOURS){
+            overtime =  this.wage * OVERTIME * (this.hours - MAXHOURS);
+        } // end of if
+        else{
+            overtime = 0.0;
+        } // end of else
+        
+        return overtime;
     } // end of overtimePay
     
     // calculate gross pay
@@ -142,7 +151,7 @@ public class EmployeePayroll{
      * @return      gross pay value
      * ****************************************/
      public double grossPay(){
-        return (regularPay() + overtimePay());
+        return (this.regularPay() + this.overtimePay());
      } // end of grossPay
     
     // Overriding Methods

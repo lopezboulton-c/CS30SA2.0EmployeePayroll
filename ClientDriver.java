@@ -43,13 +43,47 @@ public class ClientDriver {
          * note the difference between the no-arg and parameterd
          * instantiation
          */
-            EmployeePayroll employee1 = new EmployeePayroll(25, 15.25);
-            EmployeePayroll employee2 = new EmployeePayroll(60, 16.15);
+            EmployeePayroll employee1 = new EmployeePayroll(30, 15.0);
+            EmployeePayroll employee2 = new EmployeePayroll(55, 16.75);
             EmployeePayroll employee3 = new EmployeePayroll();
-            EmployeePayroll employee4 = new EmployeePayroll();
 
         // ***** Print Formatted Output *****
+            // heading
             System.out.println("*** Employee Payroll Record ***\n");
+            
+            // use getters and setters
+            // employee1
+            employee1.getID();
+            employee1.getHours();
+            employee1.getWage();
+            employee1.regularPay();
+            employee1.overtimePay();
+            employee1.grossPay();
+            // print
+            System.out.println("Employee #1");
+            System.out.println(employee1.toString());
+            
+            // employee2
+            employee2.getID();
+            employee2.getHours();
+            employee2.getWage();
+            employee2.regularPay();
+            employee2.overtimePay();
+            employee2.grossPay();
+            // print
+            System.out.println("Employee #2");
+            System.out.println(employee2.toString());
+            
+            // employee3
+            employee3.getID();
+            employee3.setHours(40);
+            employee3.setWage(11.25);
+            employee3.regularPay();
+            employee3.overtimePay();
+            employee3.grossPay();
+            // print
+            System.out.println("Employee #3");
+            System.out.println(employee3.toString());
 
         // ***** Closing Message *****
 
