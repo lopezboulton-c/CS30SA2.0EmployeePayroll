@@ -1,3 +1,5 @@
+import java.text.NumberFormat;
+
 /********************************************************************
  * Programmer:    Celeste Lopez Boulton
  * Class:  CS30S
@@ -18,6 +20,8 @@ public class EmployeePayroll{
     final static double OVERTIME = 1.5; // rate is multiplied by extra hours
     
     private static int nextID = 1000; // used to autogenerate unique id numbers
+    
+    NumberFormat currency = NumberFormat.getCurrencyInstance();
     
     //*** Instance Variables ***
     private int id; // id number of a specific employee
@@ -115,7 +119,12 @@ public class EmployeePayroll{
      * @return      regular pay value
      * ****************************************/
     public double regularPay(){
-        return hours * wage;
+        double regPay;
+        
+        // calculate regular pay
+        regPay = hours * wage;
+        
+        return  regPay;
     } // end of regularPay
     
     // calculate overtime pay
@@ -151,7 +160,12 @@ public class EmployeePayroll{
      * @return      gross pay value
      * ****************************************/
      public double grossPay(){
-        return (this.regularPay() + this.overtimePay());
+        double grossPay;
+        
+        // calculate gross pay
+        grossPay = (this.regularPay() + this.overtimePay());
+         
+        return grossPay;
      } // end of grossPay
     
     // Overriding Methods
@@ -170,9 +184,9 @@ public class EmployeePayroll{
         str = "ID: " + this.id + nl;
         str += "Hours: " + this.hours + nl;
         str += "Wage: " + this.wage + nl;
-        str += "Regular Pay: " + String.format("%4.2f", this.regularPay()) + nl;
-        str += "Overtime Pay: " + String.format("%4.2f", this.overtimePay()) + nl;
-        str += "Gross Pay: " + String.format("%4.2f", this.grossPay()) + nl;
+        str += "Regular Pay: " + String.format("%s", currency.format(this.regularPay())) + nl;
+        str += "Overtime Pay: " + String.format("%s", currency.format(this.overtimePay())) + nl;
+        str += "Gross Pay: " + String.format("%s", currency.format(this.grossPay())) + nl;
         
         return str;
     } // end of toString

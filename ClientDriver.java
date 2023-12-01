@@ -29,6 +29,9 @@ public class ClientDriver {
 
         String[] tokens = null;         // used to split input records
 
+        // variables
+        boolean equalEmployees; // sees if employees' gross pays are equal
+        
         // ***** objects *****
         ProgramInfo pInfo = new ProgramInfo("A2.0: Employee Payroll");
         //Scanner scanner = new Scanner(System.in);
@@ -84,7 +87,22 @@ public class ClientDriver {
             // print
             System.out.println("Employee #3");
             System.out.println(employee3.toString());
-
+            
+            // test equals method
+            // not equal
+            equalEmployees = employee1.equals(employee2);
+            System.out.println("Employee1 == Employee2: " + equalEmployees);
+            // equal
+            equalEmployees = employee1.equals(employee3);
+            System.out.println("Employee1 == Employee3: " + equalEmployees);
+            
+            //System.out.format("%s", currency.format(1.5));
+            
+            double value = 123.45;
+            System.out.println(currency.format(value));
+            
+            
+            
         // ***** Closing Message *****
 
         System.out.println();
