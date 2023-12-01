@@ -1,36 +1,36 @@
-import java.text.NumberFormat;
-
 /********************************************************************
  * Programmer:    Celeste Lopez Boulton
- * Class:  CS30S
+ * Class:         CS30S
  *
- * Assignment: A2.0 Employee Payroll
+ * Assignment:    A2.0 Employee Payroll
  *
- * Description: Employee Java class that calculates employee's
- *              hourly wage.
+ * Description:   Employee Java class that calculates employee's
+ *                hourly wage.
  ***********************************************************************/
 
 // import libraries as needed here
+import java.text.NumberFormat;
 
 public class EmployeePayroll{
     //*** Class Variables ***
     // a new line character that works on every computer system
     final static String nl = System.lineSeparator();
-    final static int MAXHOURS = 40; // max hours until overtime is used
+    final static int MAXHOURS = 40; // max hours until overtime is payed
     final static double OVERTIME = 1.5; // rate is multiplied by extra hours
     
     private static int nextID = 1000; // used to autogenerate unique id numbers
     
+    // *** objects
     NumberFormat currency = NumberFormat.getCurrencyInstance();
     
     //*** Instance Variables ***
     private int id; // id number of a specific employee
-    private int hours; // number of hours worked
+    private int hours; // number of hours worked by employee    
     private double wage; // employee's hourly wage
 
-    //*** Constructors ***
+    //*** Constructors ***                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
     /* a constructor is the only way we
-     * can intantiate an object from a clss
+     * can intantiate an object from a class
      * it does the job of declaring, allocating and
      * instantiating
      */
@@ -68,6 +68,7 @@ public class EmployeePayroll{
      * ****************************************/
 
     //*** Getters ***  
+    // ID
     /*****************************************
      * Description: get the unique ID for employee
      * 
@@ -79,6 +80,7 @@ public class EmployeePayroll{
     public int getID(){
         return this.id;
     } // end get id
+    // Hours
     /*****************************************
      * Description: get hours worked by employee
      * 
@@ -89,6 +91,7 @@ public class EmployeePayroll{
     public int getHours(){
         return this.hours;  
     } // end of getHours
+    // Wage
     /*****************************************
      * Description: get wage for employee
      * 
@@ -143,7 +146,7 @@ public class EmployeePayroll{
             overtime =  this.wage * OVERTIME * (this.hours - MAXHOURS);
         } // end of if
         else{
-            overtime = 0.0;
+            overtime = 0.0; // no overtime pay
         } // end of else
         
         return overtime;
@@ -174,9 +177,8 @@ public class EmployeePayroll{
         
         equal = this.grossPay() == x.grossPay();
         
-        return equal;
+        return equal;   
     } // end of equals
-    
     @Override
     public String toString(){
         String str;

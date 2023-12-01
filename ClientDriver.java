@@ -15,7 +15,7 @@ import java.text.NumberFormat;
 public class ClientDriver {
     // a new line character that works on every computer system
     final static String nl = System.lineSeparator();
-    final static String delim = "[ ]+";          // delimiter for splitting input records
+    final static String delim = "[ ]+"; // delimiter for splitting input records
 
     public static void main(String[] args) throws IOException{
         // ***** constants *******
@@ -34,14 +34,13 @@ public class ClientDriver {
         
         // ***** objects *****
         ProgramInfo pInfo = new ProgramInfo("A2.0: Employee Payroll");
-        //Scanner scanner = new Scanner(System.in);
+        //Scanner scanner = new Scanner(System.in);`
         NumberFormat currency = NumberFormat.getCurrencyInstance();
         
         // ***** print banners *****
         System.out.println(pInfo.getBanner());
 
         // ***** Using the EmployeePayroll Class *****
-        
         /* create/instantiate a couple of circle objects
          * note the difference between the no-arg and parameterd
          * instantiation
@@ -96,13 +95,6 @@ public class ClientDriver {
             equalEmployees = employee1.equals(employee3);
             System.out.println("Employee1 == Employee3: " + equalEmployees);
             
-            //System.out.format("%s", currency.format(1.5));
-            
-            double value = 123.45;
-            System.out.println(currency.format(value));
-            
-            
-            
         // ***** Closing Message *****
 
         System.out.println();
@@ -114,5 +106,5 @@ public class ClientDriver {
         //fin.close();
         //fout.close();
     } // end main 
-
+    
 } // end FormatTemplate
